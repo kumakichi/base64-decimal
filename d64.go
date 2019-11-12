@@ -23,7 +23,7 @@ func SetIndexTable(idxTable []byte) {
 }
 
 // base 10 to base 64
-func DecimalToX64(n uint64) string {
+func D10ToD64(n uint64) string {
 	var numSlice [maxStrLen]byte
 	idx := maxStrLen
 	for n > 0 {
@@ -37,7 +37,7 @@ func DecimalToX64(n uint64) string {
 }
 
 // base 64 to base 10
-func X64ToDecimal(s string) (ret uint64) {
+func D64ToD10(s string) (ret uint64) {
 	arr := []byte(s)
 	l := len(arr)
 	for i, k := l-1, 0; i >= 0; i, k = i-1, k+6 {

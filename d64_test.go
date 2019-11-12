@@ -11,15 +11,15 @@ const (
 	maxNumStr = "F||||||||||"
 )
 
-func BenchmarkDecimalToX64(b *testing.B) {
+func BenchmarkD10ToD64(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		DecimalToX64(maxNum)
+		D10ToD64(maxNum)
 	}
 }
 
-func BenchmarkX64ToDecimal(b *testing.B) {
+func BenchmarkD64ToD10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		X64ToDecimal(maxNumStr)
+		D64ToD10(maxNumStr)
 	}
 }
 
