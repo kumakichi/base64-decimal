@@ -1,4 +1,6 @@
 * About
+  [[https://godoc.org/github.com/kumakichi/base64-decimal][https://godoc.org/github.com/kumakichi/base64-decimal?status.png]]
+
   used to convert decimal to bas64 decimal, to reduce the length of number string
 
   this repo is not compatible with [[https://en.wikipedia.org/wiki/Base64][standard base64]] , we use a index table following ASCII ascending order, so the output base64 number can be compared as string ( you may need an extra character in the beginning, maybe the length of bas64 string number)

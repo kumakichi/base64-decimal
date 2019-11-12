@@ -16,11 +16,13 @@ func init() {
 	initMap()
 }
 
+// set index table which will be used in convertion between decimal base64 and base10
 func SetIndexTable(idxTable []byte) {
 	indexTable = idxTable
 	initMap()
 }
 
+// base 10 to base 64
 func DecimalToX64(n uint64) string {
 	var numSlice [maxStrLen]byte
 	idx := maxStrLen
@@ -34,6 +36,7 @@ func DecimalToX64(n uint64) string {
 	return string(numSlice[idx:])
 }
 
+// base 64 to base 10
 func X64ToDecimal(s string) (ret uint64) {
 	arr := []byte(s)
 	l := len(arr)
