@@ -9,6 +9,6 @@
 
   Environment: OSX x64 i5 2.3 Ghz
 
-| BenchmarkD10ToD64-4        	 | 7144606	 | 168 ns/op	  | 16 B/op	 | 1 allocs/op |
-| BenchmarkD64ToD10-4        	 | 4585881	 | 262 ns/op	  | 0 B/op	  | 0 allocs/op |
-| BenchmarkSetIndexTable-4   	 | 459330	  | 2229 ns/op	 | 0 B/op	  | 0 allocs/op |
+| BenchmarkD10ToD64-4      | 	 7011148	 | 164 ns/op	  | 16 B/op	 | 1 allocs/op |
+| BenchmarkD64ToD10-4      | 	 5470237	 | 218 ns/op	  | 0 B/op	  | 0 allocs/op |
+| BenchmarkSetIndexTable-4 | 	  446061	 | 2260 ns/op	 | 0 B/op	  | 0 allocs/op |

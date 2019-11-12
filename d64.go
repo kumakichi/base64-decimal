@@ -1,7 +1,13 @@
 package d64
 
+import (
+	"errors"
+	"fmt"
+)
+
 const (
 	maxStrLen = 11
+	charNum   = 64
 )
 
 var (
@@ -11,15 +17,15 @@ var (
 )
 
 func init() {
-	num2char = make(map[uint64]byte, 64)
-	char2num = make(map[byte]uint64, 64)
+	num2char = make(map[uint64]byte, charNum)
+	char2num = make(map[byte]uint64, charNum)
 	initMap()
 }
 
 // set index table which will be used in convertion between decimal base64 and base10
-func SetIndexTable(idxTable []byte) {
+func SetIndexTable(idxTable []byte) error {
 	indexTable = idxTable
-	initMap()
+	return initMap()
 }
 
 // base 10 to base 64
@@ -46,9 +52,19 @@ func D64ToD10(s string) (ret uint64) {
 	return
 }
 
-func initMap() {
+func initMap() error {
 	for k, v := range indexTable {
+		if v < '!' || v > '~' {
+			return errors.New("index table supports only ascii")
+		}
+
 		num2char[uint64(k)] = v
 		char2num[v] = uint64(k)
 	}
+
+	if len(num2char) != charNum {
+		return errors.New(fmt.Sprintf("index table length error, should be %d", charNum))
+	}
+
+	return nil
 }
