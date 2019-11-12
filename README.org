@@ -1,0 +1,13 @@
+* About
+  used to convert decimal to bas64 decimal, to reduce the length of number string
+
+  this repo is not compatible with [[https://en.wikipedia.org/wiki/Base64][standard base64]] , we use a index table following ASCII ascending order, so the output base64 number can be compared as string ( you may need an extra character in the beginning, maybe the length of bas64 string number)
+
+* Benchmarks
+
+  Environment: OSX x64 i5 2.3 Ghz
+
+| BenchmarkDecimalToX64-4  | 	 7222294 | 	       165 ns/op | 	      16 B/op | 	       1 allocs/op |
+| BenchmarkX64ToDecimal-4  | 	 5062722 | 	       240 ns/op | 	       0 B/op | 	       0 allocs/op |
+| BenchmarkSetIndexTable-4 | 	  432590 | 	      2321 ns/op | 	       0 B/op | 	       0 allocs/op |
+
